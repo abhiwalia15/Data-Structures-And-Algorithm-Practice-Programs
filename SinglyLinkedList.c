@@ -109,9 +109,9 @@ void display()
         {
             printf("%d\t",cur->info);
             cur=cur->link;
-        }
-    }
-}
+        }//end while
+    }//end else
+}//end function
 
 void main()
 {
