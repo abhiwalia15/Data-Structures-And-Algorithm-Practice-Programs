@@ -1,6 +1,15 @@
 /* C program to implement 2 stacks using 1 array
 written by- MrinalWalia and PriyonathMondal */
 
+/*In this method we are efficiently utilizing the available space.
+It doesn’t cause an overflow if there is space available in arr[].
+The this method we are going to start two stacks from two extreme corners of arr[].
+stack 1 starts from the leftmost element, the first element in stack 1
+is pushed at index 0 of the arr[]. The stack 2 starts from the rightmost corner,
+the first element in stack 2 is pushed at index (n-1) of arr[].
+Both stacks will move in opposite direction to each other.
+To check for overflow,all we need to check is for space between top elements of stack 1 and stack 2 */
+
 #include<stdio.h>
 #include<stdlib.h>
 
