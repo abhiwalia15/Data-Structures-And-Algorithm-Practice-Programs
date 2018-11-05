@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<conio.h>
+//The header stdbool.h in the C Standard Library is used for boolean type
 #include<stdbool.h>
 #include<stdlib.h>
 
@@ -8,7 +9,7 @@
 int *arr;   /* Array of size n to store actual content to be stored in stacks*/
 int *top;   /* Array of size k to store indexes of top elements of stacks */
 int *next;  /* Array of size n to store next entry in all stacks */
-                /* and free list */
+               // and free list 
 int i, n, k;
 int fre; /* To store beginning index of free list */
 
@@ -22,11 +23,13 @@ bool isFull()
 /* To push an item in stack number 'sn' where sn is from 0 to k-1*/
 void push(int item, int sn);
 
-/* To pop an from stack number 'sn' where sn is from 0 to k-1*/
+/* To pop an item from stack number 'sn' where sn is from 0 to k-1*/
 int pop(int sn);
 
 /* To check whether stack number 'sn' is empty or not*/
-bool isEmpty(int sn)  {  return (top[sn] == -1); }
+bool isEmpty(int sn)  { 
+	 return (top[sn] == -1);
+	  }
 
 
 /*function to create K stacks with an array of size n*/
@@ -48,23 +51,23 @@ int main()
 	    /* Let us put some items in stack number 0*/
 	    push(10, 0);
 	    push(90, 0);
-
+    	push(15,0);
 
 	    /* Let us put some items in stack number 1*/
    	    push(15, 1);
-    	    push(23, 1);
-    	    push(44, 1);
+    	push(23, 1);
+    	push(44, 1);
 
 
-    	    /* Let us put some items in stack number 2*/
-            push(55, 2);
-    	    push(5, 2);
+    	/* Let us put some items in stack number 2*/
+        push(55, 2);
+    	push(5, 2);
 
-            printf("Popped element from stack 0 is %d\n",pop(0));
+        printf("Popped element from stack 0 is %d\n",pop(0));
 	    printf("Popped element from stack 1 is %d\n",pop(1));
 	    printf("Popped element from stack 2 is %d\n",pop(2));
 
-	   /* traverseStack(2);*/
+	   traverseStack(2);
 
 
 	return 0;
@@ -76,7 +79,7 @@ void CreatekStacks(int k1, int n1)
     /* Initialize n and k, and allocate memory for all arrays*/
     k = k1, n = n1;
 
-    /*creating and allocating memory for the 3 arrays dynamically*/
+    /*creating and allocating memory dynamically for the 3 arrays */
     arr = (int*) malloc( n * sizeof(int));
     top = (int*) malloc(k * sizeof(int));
     next = (int*) malloc( n * sizeof(int));
@@ -87,6 +90,7 @@ void CreatekStacks(int k1, int n1)
 
     /* Initialize all spaces as free*/
     fre = 0;
+    
     for (i=0; i<n-1; i++)
         next[i] = i+1;
     next[n-1] = -1;  /* -1 is used to indicate end of free list*/
@@ -150,8 +154,8 @@ void traverseStack(int sn)
     }
 
      /* Finding the size of stack number 'sn'*/
-    /*printf("%d\n",size);*/
-    int i = 0 ;
+    printf("%d\n",size);
+    i = 0 ;
     while(i <= top[sn])
     {
     	printf("%d\n",arr[i]);
