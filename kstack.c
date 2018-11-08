@@ -52,6 +52,7 @@ int main()
 	    push(10, 0);
 	    push(90, 0);
     	push(15,0);
+    	push(19,0);
 
 	    /* Let us put some items in stack number 1*/
    	    push(15, 1);
