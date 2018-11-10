@@ -15,7 +15,7 @@ typedef struct node *NODE;
 void insertfront()
 {
    NODE temp = (NODE)malloc(sizeof(struct node));
-        printf("Enter the data\n");
+    printf("Enter the data\n");
         scanf("%d",&temp->info);
         temp->llink = NULL;
         temp->rlink = NULL;
