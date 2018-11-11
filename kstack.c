@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<conio.h>
-//The header stdbool.h in the C Standard Library is used for boolean type
+/*The header stdbool.h in the C Standard Library is used for boolean type*/
 #include<stdbool.h>
 #include<stdlib.h>
 
@@ -8,10 +8,10 @@
 
 int *arr;   /* Array of size n to store actual content to be stored in stacks*/
 int *top;   /* Array of size k to store indexes of top elements of stacks */
-int *next;  /* Array of size n to store next entry in all stacks */
-               // and free list 
+int *next;  /* Array of size n to store next entry in all stacks
+                and free list*/
 int i, n, k;
-int fre; /* To store beginning index of free list */
+int fre,size; /* To store beginning index of free list */
 
 
 /* A utility function to check if there is space available*/
@@ -27,7 +27,7 @@ void push(int item, int sn);
 int pop(int sn);
 
 /* To check whether stack number 'sn' is empty or not*/
-bool isEmpty(int sn)  { 
+bool isEmpty(int sn)  {
 	 return (top[sn] == -1);
 	  }
 
@@ -43,32 +43,36 @@ int main()
 {
 
 	/* Let us create 3 stacks in an array of size 10*/
-	    int k = 3, n = 10;
+	    int k = 3, n = 12;
 
 	    /*creating 3 stacks each with size 10*/
 	    CreatekStacks(k, n);
 
 	    /* Let us put some items in stack number 0*/
-	    push(10, 0);
-	    push(90, 0);
     	push(15,0);
     	push(19,0);
+        push(20,0);
+        push(15,0);
 
 	    /* Let us put some items in stack number 1*/
    	    push(15, 1);
     	push(23, 1);
-    	push(44, 1);
-
+    	push(40, 1);
+    	push(19, 1);
 
     	/* Let us put some items in stack number 2*/
-        push(55, 2);
-    	push(5, 2);
+   	    push(15, 2);
+    	push(23, 2);
+    	push(1, 2);
+    	push(44, 2);
 
         printf("Popped element from stack 0 is %d\n",pop(0));
 	    printf("Popped element from stack 1 is %d\n",pop(1));
+	    printf("Popped element from stack 1 is %d\n",pop(1));
 	    printf("Popped element from stack 2 is %d\n",pop(2));
+	    printf("\n");
 
-	   traverseStack(2);
+	    traverseStack(2);
 
 
 	return 0;
@@ -91,7 +95,7 @@ void CreatekStacks(int k1, int n1)
 
     /* Initialize all spaces as free*/
     fre = 0;
-    
+
     for (i=0; i<n-1; i++)
         next[i] = i+1;
     next[n-1] = -1;  /* -1 is used to indicate end of free list*/
@@ -108,7 +112,7 @@ void push(int item, int sn)
         return;
     }
 
-    int i = fre;      /* Store index of first free slot*/
+    i = fre;      /* Store index of first free slot*/
 
     /* Update index of free slot to index of next slot in free list*/
     fre = next[i];
@@ -129,12 +133,12 @@ int pop(int sn)
     if (isEmpty(sn))
     {
          printf("\nThe stack is empty!\n") ;
-         return INT_MAX;
+         return ;
     }
 
 
     /* Find index of top item in stack number 'sn'*/
-    int i = top[sn];
+    i = top[sn];
 
     top[sn] = next[i];  /* Change top to store next of previous top
 
@@ -154,10 +158,11 @@ void traverseStack(int sn)
          printf("\nStack is Empty!!\n");
     }
 
-     /* Finding the size of stack number 'sn'*/
-    printf("%d\n",size);
+     /* displaying the list*/
+    printf("ARRAY LIST-->>\n");
+    printf("\n");
     i = 0 ;
-    while(i <= top[sn])
+    while(i <= top[sn]+1)
     {
     	printf("%d\n",arr[i]);
     	i++;
