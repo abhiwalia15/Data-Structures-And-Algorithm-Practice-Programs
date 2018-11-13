@@ -1,8 +1,9 @@
 #include<stdio.h>
 #include<conio.h>
+#include<stdlib.h>
+
 /*The header stdbool.h in the C Standard Library is used for boolean type*/
 #include<stdbool.h>
-#include<stdlib.h>
 
 /*All global variables with global scope*/
 
