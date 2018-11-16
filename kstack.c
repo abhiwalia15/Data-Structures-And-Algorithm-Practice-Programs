@@ -9,8 +9,7 @@
 
 int *arr;   /* Array of size n to store actual content to be stored in stacks*/
 int *top;   /* Array of size k to store indexes of top elements of stacks */
-int *next;  /* Array of size n to store next entry in all stacks
-                and free list*/
+int *next;  /* Array of size n to store next entry in all stacks and free list*/
 int i, n, k;
 int fre,size; /* To store beginning index of free list */
 
@@ -44,7 +43,7 @@ int main()
 {
 
 	/* Let us create 3 stacks in an array of size 10*/
-	    int k = 3, n = 12;
+	    int k = 4, n = 15;
 
 	    /*creating 3 stacks each with size 10*/
 	    CreatekStacks(k, n);
@@ -53,27 +52,32 @@ int main()
     	push(15,0);
     	push(19,0);
         push(20,0);
-        push(15,0);
 
 	    /* Let us put some items in stack number 1*/
    	    push(15, 1);
     	push(23, 1);
     	push(40, 1);
-    	push(19, 1);
 
     	/* Let us put some items in stack number 2*/
    	    push(15, 2);
     	push(23, 2);
     	push(1, 2);
-    	push(44, 2);
+    	
+    	push(11, 3);
+    	push(22, 3);
+    	push(10, 3);
+    	
+    	
+    
 
         printf("Popped element from stack 0 is %d\n",pop(0));
 	    printf("Popped element from stack 1 is %d\n",pop(1));
 	    printf("Popped element from stack 1 is %d\n",pop(1));
 	    printf("Popped element from stack 2 is %d\n",pop(2));
+	    printf("Popped element from stack 2 is %d\n",pop(3));
 	    printf("\n");
 
-	    traverseStack(2);
+	    traverseStack(3);
 
 
 	return 0;
@@ -90,7 +94,7 @@ void CreatekStacks(int k1, int n1)
     top = (int*) malloc(k * sizeof(int));
     next = (int*) malloc( n * sizeof(int));
 
-    /* Initialize all stacks as empty*/
+    /*Initially all the stacks are empty*/
     for ( i = 0; i < k; i++)
         top[i] = -1;
 
@@ -109,16 +113,17 @@ void push(int item, int sn)
     /* Overflow check*/
     if (isFull())
     {
-        printf("\nThe Stack is full!\n");
+        printf("\nThe Stack is full\n");
         return;
     }
-
+	//fre=0,i=0
     i = fre;      /* Store index of first free slot*/
-
+	
+	//next[i]=0
     /* Update index of free slot to index of next slot in free list*/
     fre = next[i];
 
-    /* Update next of top and then top for stack number 'sn'*/
+    /* Update next of top and then top for stack number sn*/
     next[i] = top[sn];
     top[sn] = i;
 
@@ -163,8 +168,8 @@ void traverseStack(int sn)
     printf("ARRAY LIST-->>\n");
     printf("\n");
     i = 0 ;
-    while(i <= top[sn]+1)
-    {
+	while(i <= top[sn]+1)
+	{
     	printf("%d\n",arr[i]);
     	i++;
     }
