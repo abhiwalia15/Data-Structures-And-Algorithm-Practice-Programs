@@ -42,27 +42,28 @@ void traverseStack(int sn);
 int main()
 {
 
-	/* Let us create 3 stacks in an array of size 10*/
+	/* Let us create 4 stacks in an array of size 15*/
 	    int k = 4, n = 15;
 
-	    /*creating 3 stacks each with size 10*/
+	    /*creating 4 stacks in an array of size 15*/
 	    CreatekStacks(k, n);
 
-	    /* Let us put some items in stack number 0*/
+		/*push some items in stack number 0*/
     	push(15,0);
     	push(19,0);
         push(20,0);
 
-	    /* Let us put some items in stack number 1*/
+	    /*push some items in stack number 1*/
    	    push(15, 1);
     	push(23, 1);
     	push(40, 1);
 
-    	/* Let us put some items in stack number 2*/
+  		/*push some items in stack number 2*/	
    	    push(15, 2);
     	push(23, 2);
     	push(1, 2);
     	
+    	/*push some items in stack number 3*/
     	push(11, 3);
     	push(22, 3);
     	push(10, 3);
@@ -76,10 +77,9 @@ int main()
 	    printf("Popped element from stack 2 is %d\n",pop(2));
 	    printf("Popped element from stack 2 is %d\n",pop(3));
 	    printf("\n");
-
-	    traverseStack(3);
-
-
+		
+		traverseStack(3);
+		
 	return 0;
 }
 
@@ -165,7 +165,7 @@ void traverseStack(int sn)
     }
 
      /* displaying the list*/
-    printf("ARRAY LIST-->>\n");
+    printf("STACK ---->>\n");
     printf("\n");
     i = 0 ;
 	while(i <= top[sn]+1)
@@ -173,6 +173,6 @@ void traverseStack(int sn)
     	printf("%d\n",arr[i]);
     	i++;
     }
-
+	
 
 }
