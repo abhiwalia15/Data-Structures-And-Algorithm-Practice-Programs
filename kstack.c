@@ -78,7 +78,7 @@ int main()
 	    printf("Popped element from stack 2 is %d\n",pop(3));
 	    printf("\n");
 		
-		traverseStack(2);
+		traverseStack(3);
 		
 	return 0;
 }

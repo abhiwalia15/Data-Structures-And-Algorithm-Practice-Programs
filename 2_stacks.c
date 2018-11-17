@@ -17,7 +17,7 @@ To check for overflow,all we need to check is for space between top elements of 
 void main()
 {
     /*declare variables*/
-    int n,top1,top2,choice=1,a,i,arr[100];
+    int n,top1,top20,choice=1,a,i,arr[100];
     /*enter the size of the array*/
     printf("Enter size of array you want to use\n");
     scanf("%d",&n);
