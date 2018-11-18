@@ -2,7 +2,7 @@
 #include<conio.h>
 #define SIZE 100
 
-int a[SIZE] ,c;
+int a[SIZE] ,n;
 
 //function to perform BST operation using an array
 void BST(int ele)
@@ -13,16 +13,16 @@ void BST(int ele)
 		return;
 	}//end if
 	
-	c=0;
-	while(a[c]!=NULL)
+	n=0;
+	while(a[n]!=NULL)
 	{
-		if(ele < a[c])
-			c = 2*c+1;
+		if(ele < a[n])
+			n = 2*n+1;
 		else
-			c = 2*c+2;
+			n = 2*n+2;
 	}//end while
 	
-	a[c]=ele;
+	a[n]=ele;
 }// end function
 
 void display()
@@ -51,7 +51,7 @@ void main()
 						a[i]=NULL;
 					printf("Enter no. of elements\n");
 					scanf("%d",&j);
-					printf("ENter the elements of the array---.>>\n");
+					printf("Enter the elements of the array >--->>>\n");
 					for(i=0;i<j;i++)
 					{
 						scanf("%d",&ele);

@@ -1,8 +1,9 @@
+
 #include<stdio.h>
 #include<conio.h>
 #include<process.h>
 
-int a[100],n,i,root,c,temp,ch;
+int a[100],n,i,root,n,temp,ch;
 
 void createheap(int i)
 {
@@ -14,17 +15,17 @@ void createheap(int i)
 	
 	else
 	{
-		c=i;
-		while(c!=0)
+		n=i;
+		while(n!=0)
 		{
-			root = (c-1)/2;
-			if(a[root]<=a[c])
+			root = (n-1)/2;
+			if(a[root]<=a[n])
 			{
 				temp = a[root];
-				a[root] = a[c];
-				a[c] = temp;
+				a[root] = a[n];
+				a[n] = temp;
 			}//end if
-			c=root;
+			n=root;
 		}//end while
 	}//end else
 }//end function
