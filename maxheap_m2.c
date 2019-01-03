@@ -7,7 +7,7 @@ int n=0;
 
 void insert_heap(int item)
 {
-	int n, p;
+	int c, p;
 	
 	if(n==SIZE)
 	{
@@ -15,17 +15,17 @@ void insert_heap(int item)
 		return;
 	}//end if
 	
-	n=n;
-	p=(n-1)/2;
+	c=n;
+	p=(c-1)/2;
 	
-	while(n!=0 && item>a[p])
+	while(c!=0 && item>a[p])
 	{
-		a[n]=a[p];
-		n=p;
-		p=(n-1)/2;
+		a[c]=a[p];
+		c=p;
+		p=(c-1)/2;
 	}//end while
 	
-	a[n]=item;
+	a[c]=item;
 	n++;
 }
 

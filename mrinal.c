@@ -1,3 +1,6 @@
+/*Implementation of multiple stacks in a single array
+	@author Mrinal Walia */
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -102,11 +105,11 @@ void display(int k)
 	  }//end if
 	  
 	  //else display the list 
-      printf("\nStack %d -->> \n",k);
+      printf("\nStack %d -->> ",k);
       
       for(j=min[k-1]+1;j<=top[k-1];++j)
       {   
-	  printf("%d",s[j] );
+	  printf("%d\t",s[j] );
 	  }//end for 
     	
 } //end function display       
