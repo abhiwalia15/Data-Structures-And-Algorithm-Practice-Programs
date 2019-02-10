@@ -1,6 +1,27 @@
 #include<stdio.h>
 #include<stdio.h>
 
+
+void main()
+{
+    int a[100],i,n;
+
+    printf("Enter the number of elements\n");
+    scanf("%d",&n);
+
+    printf("Enter the elements of the array\n");
+    for(i=1;i<=n;i++)
+        scanf("%d\n",&a[i]);
+
+    quicksort(a,0,n-1);
+
+    printf("Elements after sorting are\n");
+    for(i=1;i<=n;i++)
+        printf("%d\n",a[i]);
+
+}
+
+
 void quicksort(int a[100], int low, int high)
 {
     int j;
@@ -31,30 +52,11 @@ int partition(int a[100], int low, int high)
         else
         {
             temp=a[low];
-            a[low]=a[j];
-            a[j]=temp;
-            return j;
+            a[low]=a[i];
+            a[i]=temp;
+            return i;
         }
     }
 
 }
 
-void main()
-{
-    int a[100],i,n;
-
-    printf("Enter the number of elements\n");
-    scanf("%d",&n);
-
-    printf("Enter the elements of the array\n");
-    for(i=0;i<n;i++)
-        scanf("%d\n",&a[i]);
-
-    quicksort(a,0,n-1);
-
-    printf("Elements after sorting are\n");
-    for(i=0;i<n;i++)
-        printf("%d\n",a[i]);
-
-    getch();
-}
