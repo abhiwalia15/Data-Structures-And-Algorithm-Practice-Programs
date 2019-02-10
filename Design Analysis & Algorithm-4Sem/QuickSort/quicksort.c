@@ -18,10 +18,8 @@ int partition(int a[100], int low, int high)
     int key=a[low], j=high, i=low+1, temp;
     for(;;)
     {
-        while(key>=a[i] && i<high)
-            i++;
-        while(key<=a[j])
-            j--;
+        while(key>=a[i] && i<high) i++;
+        while(key<=a[j]) j++;
 
         if(i<j)
         {
@@ -41,7 +39,7 @@ int partition(int a[100], int low, int high)
 
 }
 
-voim main()
+void main()
 {
     int a[100],i,n;
 
