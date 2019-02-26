@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<stdio.h>
 
+void quicksort(int [], int, int);
+int partition(int[], int, int);
 
 void main()
 {
@@ -10,19 +12,18 @@ void main()
     scanf("%d",&n);
 
     printf("Enter the elements of the array\n");
-    for(i=1;i<=n;i++)
-        scanf("%d\n",&a[i]);
+    for(i=0;i<n;i++)
+        scanf("%d\t",&a[i]);
 
     quicksort(a,0,n-1);
 
     printf("Elements after sorting are\n");
-    for(i=1;i<=n;i++)
-        printf("%d\n",a[i]);
+    for(i=0;i<n;i++)
+        printf("%d\t",a[i]);
 
 }
 
-
-void quicksort(int a[100], int low, int high)
+void quicksort(int a[], int low, int high)
 {
     int j;
 
@@ -34,13 +35,13 @@ void quicksort(int a[100], int low, int high)
     }
 }
 
-int partition(int a[100], int low, int high)
+int partition(int a[], int low, int high)
 {
     int key=a[low], j=high, i=low+1, temp;
     for(;;)
     {
         while(key>=a[i] && i<high) i++;
-        while(key<=a[j]) j++;
+        while(key<a[j] && j>=low) j--;
 
         if(i<j)
         {
@@ -52,11 +53,15 @@ int partition(int a[100], int low, int high)
         else
         {
             temp=a[low];
-            a[low]=a[i];
-            a[i]=temp;
-            return i;
+            a[low]=a[j];
+            a[j]=temp;
+            return j;
         }
     }
 
 }
+
+
+
+
 
