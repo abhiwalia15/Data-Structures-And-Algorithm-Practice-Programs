@@ -26,7 +26,7 @@ void main()
 kruskal(int a[10][10], int n)
 {
     E Ed[100], temp;
-    int i, j, count=1;
+    int i, j, count=1, pendv,pbegv,parent,sum=0,noe=0;
 
     /*dont accept 0 and 999's*/
     for(i=1;i<=n;i++)
@@ -52,6 +52,30 @@ kruskal(int a[10][10], int n)
         Ed[j] = temp;
     }/*end for*/
 
+    for(i=1;i<=count;i++)
+    {
 
+        pbegv = getparent(parent,Ed[i].begv);
+        pendv = getparent(parent,Ed[i].endv);
+        if(pbegv!=pendv)
+        {
+            sum=sum+Ed[i].cost;
+            noe = noe+1;
+            if(noe==n-1)
+            {
+                printf("MST COST IS %d",sum);
+                break;
+                }
+            parent[pendv] = pbegv;
+            }
+
+
+        int getparent(int parent [], int v)
+        {
+            while(parent[v] != -1)
+                v = parent[v];
+            return v;
+        }
+    }
 }
 
