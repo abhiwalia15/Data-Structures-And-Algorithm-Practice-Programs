@@ -1,0 +1,26 @@
+#algorithm Sort by count problem
+
+Sort(a,m)
+{
+for i<-1 to n do
+	count[i]=1
+
+for i<-1 to n-1 do
+	-----begin
+
+	for j<-i+1 to n do
+		-----begin
+
+		if(a[i] > a[j]) do
+			count[i] = count[i]+1
+		else
+			count[j] = count[j]+1
+
+		-----end for
+
+	------end for
+
+for i<-1 to n do
+	b[count[i]]
+
+			

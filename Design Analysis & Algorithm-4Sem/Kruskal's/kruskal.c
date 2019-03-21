@@ -47,10 +47,20 @@ kruskal(int a[10][10], int n)
         for(j=1;j<=count-i;j++)
         if(Ed[j+1].cost < Ed[j].cost)
     {
-        temp = Ed[j+1];
-        Ed[j+1] = Ed[j];
-        Ed[j] = temp;
+        temp.begv = Ed[j+1].begv;
+        temp.endv = Ed[j+1].endv;
+        temp.cost = Ed[j+1].cost;
     }/*end for*/
+
+    getparent(int parent [], int v)
+        {
+            while(parent[v] != -1)
+                v = parent[v];
+            return v;
+        }
+    }
+
+
 
     for(i=1;i<=count;i++)
     {
@@ -68,14 +78,7 @@ kruskal(int a[10][10], int n)
                 }
             parent[pendv] = pbegv;
             }
-
-
-        int getparent(int parent [], int v)
-        {
-            while(parent[v] != -1)
-                v = parent[v];
-            return v;
-        }
     }
-}
+
+
 
