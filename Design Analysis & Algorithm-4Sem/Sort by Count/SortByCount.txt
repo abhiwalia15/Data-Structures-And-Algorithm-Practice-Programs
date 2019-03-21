@@ -1,4 +1,7 @@
-#algorithm Sort by count problem
+# Algorithm Sort by count problem
+
+
+# In this algorithm i'll discuss the technique (SORT BY COUNT)
 
 Sort(a,m)
 
