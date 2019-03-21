@@ -1,7 +1,11 @@
 #algorithm Sort by count problem
 
 Sort(a,m)
+
 {
+
+------begin
+
 for i<-1 to n do
 	count[i]=1
 
@@ -21,6 +25,8 @@ for i<-1 to n-1 do
 	------end for
 
 for i<-1 to n do
-	b[count[i]]
+	b[count[i]] = a[i]
+
+-----end function
 
 			
