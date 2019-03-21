@@ -27,6 +27,7 @@ for i<-1 to n-1 do
 
 	------end for
 
+
 for i<-1 to n do
 	b[count[i]] = a[i]
 
