@@ -1,0 +1,25 @@
+algorithm knapsack(int n, int m, int p[], int w[])
+
+{
+
+	for(i=0;i<n;i++)
+		{
+		for(j=0;j<m;j++)
+			{
+				if(i==0 || j==0)
+					v[i][[j] = 0;
+
+
+				elseif(w[i]>j)
+					v[i][j] = v[i=1][j];
+
+				else
+					v[i][j] = max(v[i-1][j], p[i]+v[i-1][j-w[i]])
+
+			}//end for j
+
+		}//end for i
+
+	return v[n][m];
+
+}//end function
