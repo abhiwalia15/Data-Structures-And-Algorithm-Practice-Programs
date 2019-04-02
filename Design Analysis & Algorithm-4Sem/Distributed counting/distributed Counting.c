@@ -23,10 +23,10 @@ dist(int a[10], int n)
         d[j]=0;
     for(i=0;i<n-1;i++)
         d[a[i]-l] = d[a[i]-l] + 1;
-    for(j=1;j<(u-l);j++)
+    for(j=1;j<=(u-l);j++)
         d[j] = d[j-1]+d[j];
 
-    for(i=n-1;i>1;i--)
+    for(i=n-1;i>=1;i--)
     {
         j = a[i]-l;
         s[d[j]-1] = a[i];
