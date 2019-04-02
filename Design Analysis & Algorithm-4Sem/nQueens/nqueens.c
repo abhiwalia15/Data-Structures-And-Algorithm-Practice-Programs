@@ -31,7 +31,7 @@ nQueen(int n)
     while(k!=0)
     {
         x[k]=1;
-        while(x[k]<=n && place(x,n)==0)
+        while(x[k]<=n && place(x,k)==0)
             x[k]=x[k]+1;
         if(x[k]<=n)
             {
