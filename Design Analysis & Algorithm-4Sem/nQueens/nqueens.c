@@ -22,7 +22,7 @@ place(int x[10], int k)
             return 0;
     }/*end for*/
     return 1;
-}*/end place function*/
+}/*end place function*/
 
 nQueen(int n)
 {
@@ -33,12 +33,12 @@ nQueen(int n)
         x[k]=1;
         while(x[k]<=n && place(x,n)==0)
             x[k]=x[k]+1;
-        if(x[k}<=n])
+        if(x[k]<=n)
             {
-            if[k==n]
+            if(k==n)
             {
                 printf("The solution is\n");
-                for)i=1;i<=n;i++)
+                for(i=1;i<=n;i++)
                 printf("%d\t",x[i]);
             }/*end if*/
             else
@@ -50,4 +50,5 @@ nQueen(int n)
         }/*end if*/
         else
             k--;
+    }
 }/*end function*/
