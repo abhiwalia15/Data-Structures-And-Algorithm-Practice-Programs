@@ -32,7 +32,7 @@ sos(int a[], int k, int sum, int r, int s[], int d)
         for(i=0;i<=k;i++)
             if(s[i])
             printf("%d\t",a[i]);
-            printf("\n")
+            printf("\n");
     }
     else
     {
