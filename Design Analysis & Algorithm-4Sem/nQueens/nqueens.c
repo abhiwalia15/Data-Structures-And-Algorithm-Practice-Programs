@@ -23,7 +23,7 @@ place(int x[10], int k)
     }/*end for*/
     return 1;
 }/*end place function*/
-
+  
 nQueen(int n)
 {
     int i, k=1, x[10];
