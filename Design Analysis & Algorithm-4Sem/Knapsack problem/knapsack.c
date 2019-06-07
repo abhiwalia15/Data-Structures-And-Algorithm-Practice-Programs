@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
+#include<math.h>
 
 int v[10][10];
 
@@ -16,11 +17,13 @@ int knapsack(int n, int m, int p[], int w[])
 					v[i][j] = 0;
 
 
-				else if(w[i]>j)
-					v[i][j] = v[i-1][j];
+				else if(j - w[i]<0)
+                    v[i][j] = v[i-1][j];
+
 
 				else
-					v[i][j] = max(v[i-1][j], p[i]+v[i-1][j-w[i]]);
+                    v[i][j] = max(v[i-1][j], p[i]+v[i-1][j-w[i]]);
+
 
 			}/*end for j*/
 
@@ -41,7 +44,7 @@ void subset(int n, int m, int v[10][10], int w[10])
     {
         if(v[i][j] != v[i-1][j] )
         {
-            printf("Item %d\n",i);
+            printf("Value:%d Weight %d:\n",v[i],w[i]);
             j=j-w[i];
         }
         i--;
@@ -69,7 +72,7 @@ void main()
     value = knapsack(n,m,p,w);
     printf("the solution of knapsack after dynamic programming\n");
     for(i=0;i<n;i++)
-        for(j=0;j<n;j++)
+        for(j=0;j<m;j++)
     {
         printf("%d",v[i][j]);
     }
@@ -77,4 +80,9 @@ void main()
     printf("The max profit obtained is %d",value);
     printf("the items of optimal subset are \n");
     subset(n,m,v,w);
+}
+
+int max ( int a, int b)
+{
+ return ( (a>b)?a:b);
 }

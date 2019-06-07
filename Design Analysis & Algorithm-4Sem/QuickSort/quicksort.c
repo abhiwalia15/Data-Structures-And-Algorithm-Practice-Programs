@@ -4,37 +4,6 @@
 void quicksort(int [], int, int);
 int partition(int[], int, int);
 
-void main()
-{
-    int a[100],i,n;
-
-    printf("Enter the number of elements\n");
-    scanf("%d",&n);
-
-    printf("Enter the elements of the array\n");
-    for(i=0;i<n;i++)
-        scanf("%d\t",&a[i]);
-
-    quicksort(a,0,n-1);
-
-    printf("Elements after sorting are\n");
-    for(i=0;i<n;i++)
-        printf("%d\t",a[i]);
-
-}
-
-void quicksort(int a[], int low, int high)
-{
-    int j;
-
-    if(low<high)
-    {
-        j = partition(a,low,high);
-        quicksort(a,low,j-1);
-        quicksort(a,j+1,high);
-    }
-}
-
 int partition(int a[], int low, int high)
 {
     int key=a[low], j=high, i=low+1, temp;
@@ -58,8 +27,43 @@ int partition(int a[], int low, int high)
             return j;
         }
     }
+}
+
+void quicksort(int a[], int low, int high)
+{
+    int j;
+
+    if(low<high)
+    {
+        j = partition(a,low,high);
+        quicksort(a,low,j-1);
+        quicksort(a,j+1,high);
+    }
+}
+
+void main()
+{
+    int a[100],i,n;
+
+    printf("Enter the number of elements\n");
+    scanf("%d",&n);
+
+    printf("Enter the elements of the array\n");
+    for(i=0;i<n;i++)
+        scanf("%d\t",&a[i]);
+
+    quicksort(a,0,n-1);
+
+    printf("Elements after sorting are\n");
+    for(i=0;i<n;i++)
+        printf("%d\t",a[i]);
 
 }
+
+
+
+
+
 
 
 

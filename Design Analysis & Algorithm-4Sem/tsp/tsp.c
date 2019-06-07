@@ -10,10 +10,11 @@ void main()
     scanf("%d",&n);
     printf("Enter the cost adj. matrix\n");
     for(i=1;i<=n;i++)
+        for(j=1;j<=n;j++)
         scanf("%d",&a[i][j]);
 
     sum = tsp(n,a,1);
-    printf("%d is the tsp tour cost",sum);
+    printf("%d is the tsp tour cost\n",sum);
 }/*end main*/
 
 tsp(int n, int a[10][10], int source)
@@ -23,6 +24,7 @@ tsp(int n, int a[10][10], int source)
     {
         s[i]=0;
         temp=source;
+    }
         s[source]=1;
         sum=0;
         for(i=1;i<=n-1;i++)
@@ -41,4 +43,4 @@ tsp(int n, int a[10][10], int source)
         sum = sum+a[u][temp];
         return sum;
     }
-} 
+

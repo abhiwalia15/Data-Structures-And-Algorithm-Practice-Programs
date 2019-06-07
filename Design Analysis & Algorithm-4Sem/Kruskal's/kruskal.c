@@ -21,7 +21,15 @@ void main()
 
             kruskal(a,n);
 
+
 }/*end main*/
+
+getparent(int parent [], int v)
+        {
+            while(parent[v] != -1)
+                v = parent[v];
+            return v;
+        }
 
 kruskal(int a[10][10], int n)
 {
@@ -51,16 +59,6 @@ kruskal(int a[10][10], int n)
         temp.endv = Ed[j+1].endv;
         temp.cost = Ed[j+1].cost;
     }/*end for*/
-
-    getparent(int parent [], int v)
-        {
-            while(parent[v] != -1)
-                v = parent[v];
-            return v;
-        }
-    }
-
-
 
     for(i=1;i<=count;i++)
     {

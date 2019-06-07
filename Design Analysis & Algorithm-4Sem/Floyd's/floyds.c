@@ -7,14 +7,14 @@ void main()
 
 	printf("Enter the number of nodes\n");
 	scanf("%d",&n);
-	
+
 	printf("Enter the cost adj. matrix\n");
 	for(i=0;i<n;i++)
 		for(j=0;j<n;j++)
 			scanf("%d",&a[i][j]);
 
 	floyds(a,n);
-	
+
 	printf("Shortest Path matrix:\n");
 	for(i=0;i<n;i++)
 		for(j=0;j<n;j++)

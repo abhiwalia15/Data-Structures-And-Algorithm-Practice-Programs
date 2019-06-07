@@ -1,36 +1,32 @@
 #include<stdio.h>
 #include<conio.h>
-#include<stdlib.h>
 
-void main()
-{
-    int n;
+void nQueen(int);
+int place(int [],int);
 
-    printf("Enter the number of queens\n");
-    scanf("%d",&n);
-    nQueen(n);
-}/*end main*/
 
-place(int x[10], int k)
+
+
+int place(int x[10], int k)
 {
     int i;
     for(i=1;i<=k-1;i++)
     {
         if(x[i]==x[k])
             return 0;
-        if(abs(x[i]-x[k]==abs(i-k)))
+        if(abs(i-k)==abs(x[i]-x[k]))
             return 0;
     }/*end for*/
     return 1;
 }/*end place function*/
-  
-nQueen(int n)
+
+void nQueen(int n)
 {
     int i, k=1, x[10];
-
+    x[k]=0;
     while(k!=0)
     {
-        x[k]=1;
+        x[k]+=1;
         while(x[k]<=n && place(x,k)==0)
             x[k]=x[k]+1;
         if(x[k]<=n)
@@ -48,7 +44,16 @@ nQueen(int n)
             }/*end else*/
 
         }/*end if*/
-        else
             k--;
     }
 }/*end function*/
+
+void main()
+{
+    int n;
+
+    printf("Enter the number of queens\n");
+    scanf("%d",&n);
+    nQueen(n);
+}/*end main*/
+

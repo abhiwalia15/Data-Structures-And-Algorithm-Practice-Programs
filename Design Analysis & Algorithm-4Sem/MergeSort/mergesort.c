@@ -2,25 +2,28 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-
-void main()
+void merge(int a[100], int low,int mid, int high)
 {
-    int a[100],i,n;
+	int i=low, j=mid+1, b[100], k=low;
+	while(i<=mid && j<=high)
+	{
+		if(a[i]<=a[j])
+		b[k++]=a[i++];
 
-    printf("Enter the number of elements\n");
-    scanf("%d",&n);
+		else
+		b[k++]=a[j++];
+	}
 
-    printf("Enter the elements of the array\n");
-    for(i=0;i<n;i++)
-        scanf("%d\t",&a[i]);
+	while(i<=mid)
+	b[k++]=a[i++];
 
-    mergesort(a,0,n-1);
+	while(j<=high)
+	b[k++]=a[j++];
 
-    printf("Elements after sorting are\n");
-    for(i=0;i<n;i++)
-        printf("%d\t",a[i]);
-
+	for(i=low;1<=high;i++)
+	a[i]=b[i];
 }
+
 
 void mergesort(int a[100], int low, int high)
 {
@@ -36,27 +39,25 @@ void mergesort(int a[100], int low, int high)
 }
 
 
-void merge(int a[100], int low,int mid, int high)
+void main()
 {
-	int i=low, j=mid+1, b[100], k=low;
-	while(i<=mid && j<=high)
-	{
-		if(a[i]<a[j])
-		b[k++]=a[i++];
+    int a[100],i,n;
 
-		else
-		b[k++]=a[j++];
-	}
+    printf("Enter the number of elements\n");
+    scanf("%d",&n);
 
-	while(i<=mid)
-	b[k++]=a[i++];
+    printf("Enter the elements of the array\n");
+    for(i=1;i<;i++)
+        scanf("%d\t",&a[i]);
 
-	while(j<=high)
-	b[k++]=a[j++];
+    mergesort(a,0,n-1);
 
-	for(i=low;i<=high;i++)
-	a[i]=b[j];
+    printf("Elements after sorting are\n");
+    for(i=1;i<=n;i++)
+        printf("%d\t",a[i]);
+
 }
+
 
 
 

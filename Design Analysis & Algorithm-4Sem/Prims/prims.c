@@ -24,7 +24,7 @@ void main()
         printf("Cost of MST is %d",sum);
 }/*end main*/
 
-prims(int n, int a[10][10], int src)
+int prims(int n, int a[10][10], int src)
 {
     int d[10], s[10], i, j, u, v, sum=0, min;
 
@@ -40,19 +40,24 @@ prims(int n, int a[10][10], int src)
     {
         min =999;
         for(j=1;j<=n;j++)
+        {
             if(s[j]==0) if(d[j]<min)
         {
             u=j;
             min=d[j];
         }/*end for*/
+        }
 
         s[u]=1;
         sum = sum+d[u];
 
         for(v=1;v<=n;v++)
+        {
             if(s[v]==0 && d[v]>a[u][v])
                 d[v]=a[u][v];
     }
+    }
+
     return sum;
 }/*end function*/
 
