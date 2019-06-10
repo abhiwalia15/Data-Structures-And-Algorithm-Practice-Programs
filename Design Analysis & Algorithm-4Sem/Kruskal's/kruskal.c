@@ -60,6 +60,9 @@ kruskal(int a[10][10], int n)
         temp.cost = Ed[j+1].cost;
     }/*end for*/
 
+
+    for(i=1;i<=n;i++)
+
     for(i=1;i<=count;i++)
     {
 
@@ -69,12 +72,13 @@ kruskal(int a[10][10], int n)
         {
             sum=sum+Ed[i].cost;
             noe = noe+1;
+            parent[Ed[i].endv] = Ed[i].begv;
             if(noe==n-1)
             {
                 printf("MST COST IS %d",sum);
                 break;
                 }
-            parent[pendv] = pbegv;
+
             }
     }
 
